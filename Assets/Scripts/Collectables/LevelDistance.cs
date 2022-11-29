@@ -8,6 +8,8 @@ public class LevelDistance : MonoBehaviour
 {
 
     public GameObject disDisplay;
+    public GameObject disEndDisplay;
+
     public int disRun;
     public bool addingDis = false;
 
@@ -26,6 +28,7 @@ public class LevelDistance : MonoBehaviour
     {
         disRun += 1;
         disDisplay.GetComponent<Text>().text = "" + disRun;
+        disEndDisplay.GetComponent<Text>().text = "" + disRun;
         yield return new WaitForSeconds(0.2f);
         addingDis = false;
     }
