@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnSpeed = 6f;
     private Rigidbody playerRb;
 
+    static public bool canMove = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,9 @@ public class PlayerController : MonoBehaviour
         
         
         transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
+        if (canMove)
+      {
+
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -38,16 +43,17 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(Vector3.left * Time.deltaTime * turnSpeed * -1);
             }
         }
+      }
 
         /*if (Input.GetButtonDown("Jump"))
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }*/
-        
-        
-        
-        
 
-        
+
+
+
+
+
     }
 }
